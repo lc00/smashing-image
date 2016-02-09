@@ -1,0 +1,22 @@
+<section class='row'>
+	<div ng-repeat='image in images' class='content col-md-3 col-sm-4 col-xs-6 horizontal-center margin-bot-30'>
+		<div class='file-container' img-display ng-click='start()'>
+		</div>		
+		<div class='title'>
+			<span>image &nbsp;&nbsp;</span>  
+			<span>{{image.title}}<span>
+			<!-- <span><h4>{{image.title}}</h4></span> -->
+		</div>
+	</div>
+	<div ng-repeat='album in albums' class='content col-md-3 col-sm-4 col-xs-6 horizontal-center margin-bot-30'>
+		<div class='file-container'>
+			<a ng-click='start(album)'>
+				<img ng-src='/contents/{{album.content[0]}}' class='img-rounded' style='width: 180px; height: 200px'>
+			</a>
+		</div>
+		<div class='title'>
+			<span>album &nbsp;&nbsp;</span>  
+			<span>{{album.title}}<span>
+		</div>
+	</div>
+</section>

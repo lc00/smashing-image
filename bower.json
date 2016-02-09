@@ -1,0 +1,27 @@
+{
+  "name": "smashingimmage",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lc00/smashingImmage",
+  "authors": [
+    "lc00 <leannecheung00@gmail.com>"
+  ],
+  "main": "index.html",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-ui-router": "~0.2.18",
+    "angular-animate": "~1.5.0",
+    "angular-bootstrap": "~1.1.2",
+    "bootstrap": "~3.3.6",
+    "animate.css": "~3.5.1",
+    "ng-file-upload": "~11.2.3"
+  }
+}

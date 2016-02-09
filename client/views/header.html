@@ -1,0 +1,68 @@
+<div class='container' ng-controller='Header'>
+	<header class='header'>
+		<ul class='nav nav-pills pull-right'>
+			<li ui-sref-active='active'>
+				<a ui-sref='add'>Upload Images</a>
+			</li>
+			<li class='account' ng-hide='isAuthenticated()' ui-sref-active='active'>
+				<a ui-sref='login'>Login</a>
+			</li>	
+		<!-- 	<li ng-show='isAuthenticated()' ui-sref-active='active'>
+				<a ui-sref='logout'>Logout</a>
+			</li>	 -->
+			<li class='account' ng-show='isAuthenticated()'>
+				<a ui-sref='images'>{{username}}</a>
+				<div class='user-dropdown-container'>
+					<ul>
+						<li>
+							<a ui-sref='images'>images</a>
+						</li>
+						<li>
+							<a ui-sref='albums'>albums</a>
+						</li>
+						<li>
+							<a ui-sref='logout'>logout</a>
+						</li>
+					</ul>
+				</div>
+
+			</li>		
+		</ul>
+		<a class='text-muted' ui-sref='landing'>
+			<h4 style='line-height:41px'>Smashing Immage</h4>
+		</a>
+	</header>
+</div>
+
+
+<!-- <div class='header row'>
+	<div class='col-lg-3 col-md-3 col-sm-4 col-xs-4 text-align-left'>
+		<a href='#'><h4>Smashing Immage</h4></a>
+	</div>
+	<a class='col-lg-2 col-md-2 col-sm-3 col-xs-3 padding-top-10' ui-sref='add'>Upload Images</a>
+	<div class='col-lg-1 col-lg-offset-6 col-md-1 col-md-offset-6 col-sm-1 col-sm-offset-4 col-xs-offset-3 col-xs-1 padding-top-10 text-align-right'>
+		<a class='sign-in-btn' ui-sref='login' ng-show='!username'>
+			Login
+		</a>
+		<a class='sign-in-btn' ng-show='username' ng-bind='username'></a>
+		<a class='sign-in-btn' ng-click='logout()' ng-show='username'>
+			Logout
+		</a>
+	</div>
+</div> -->
+
+<!-- <div class='header clearfix'>
+	<div class='clearfix'>
+		<a href='#' style='float: left'><h4>Smashing Immage</h4></a>
+		<div class='sign-in-container' style='float: right'>
+			<a class='sign-in-btn' ui-sref='login' ng-show='!username'>
+				Login
+			</a>
+			<a class='sign-in-btn' ng-show='username' ng-bind='username'></a>
+			<a class='sign-in-btn' ng-click='logout()' ng-show='username'>
+				Logout
+			</a>
+		</div>
+	</div>
+</div> -->
+

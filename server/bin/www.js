@@ -1,0 +1,15 @@
+if(process.env.NODE_ENV == 'dev'){
+	require('dotenv').load();
+}
+
+var app = require('../app');
+
+var port = process.env.PORT || 3001;
+
+// if(process.env.NODE_ENV == 'dev'){
+	app.listen(port, function(){
+		console.log('Server started on port %s', port);
+		// break;
+	});	
+// }
+

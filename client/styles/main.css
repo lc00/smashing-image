@@ -1,0 +1,244 @@
+/* for fixed position - not working yet
+/*.header-container {
+	height: 65px;
+	background-color: peachpuff;
+}*/
+
+.header {
+	margin: 10px 0;
+
+	/* for fixed position - not working yet
+	/*position: fixed;
+	z-index: 100;
+	width: 100%;*/
+}
+
+.margin-0 {
+	margin: 0;
+}
+
+.margin-20 {
+	margin: 20px 20px;
+}
+
+.margin-bot-30 {
+	margin-bottom: 30px;
+}
+
+.horizontal-center {
+	text-align: center;
+}
+
+.aqua {
+	color: #009fd6;
+}
+
+.yellow {
+	color: #e5e500;
+}
+
+a, a:hover {
+	text-decoration: none !important;
+}
+
+hr {
+	margin-top: 0;
+}
+
+.sign-in-container{
+	height: 39px;
+	line-height: 39px;
+	white-space: nowrap;
+	text-align: right;
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+
+.padding-top-10 {
+	padding-top: 10px;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.thumb {
+    width: 100px;
+    height: 100px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+/*
+form .progress {
+    line-height: 15px;
+}*/
+
+.progress-display {
+    display: inline-block;
+    width: 350px;
+    border: 3px groove #CCC;
+}
+
+.progress-display div {
+    font-size: smaller;
+    background: pink;
+    width: 0;
+}
+
+.margin-bot-20 {
+	margin-bottom: 20px;
+}
+
+.margin-right-10 {
+	margin-right: 10px;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.form-signin {
+    max-width: 280px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top:50px;
+}
+.form-signin .form-signin-heading, .form-signin {
+  margin-bottom: 10px;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+
+}
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+
+}
+
+.main-alert {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.account .user-dropdown-container {
+  display: none;
+}
+
+.account:hover .user-dropdown-container {
+  display: inline;
+}
+
+.account {
+  width: 100px;
+  text-align: center;
+} 
+
+.user-dropdown-container {
+  position: absolute;
+  right: 25px;
+  z-index: 1000;
+}
+
+.edit-in-place h4 {
+  cursor: pointer;
+}
+
+.edit-in-place p {
+  cursor: pointer;
+}
+
+.edit-in-place input {
+  display: none;
+}
+
+.edit-in-place.active h4 {
+  display: none;
+}
+
+.edit-in-place.active p {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
+}
+
+.content .title {
+  display: none;
+}
+
+.content:hover .title {
+  display: inline;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padding-top-70 {
+  padding-top: 70px
+}
+
+.height-550 {
+  height: 550px;
+}
+
+.height-650 {
+  height: 650px;
+}
+
+.padding-bot-20px {
+  padding-bottom: 20px;
+}
+
+.margin-top-bot-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.file-container {
+  cursor: pointer;
+
+}

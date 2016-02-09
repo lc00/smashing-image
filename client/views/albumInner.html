@@ -1,0 +1,32 @@
+<section class='horizontal-center'>
+	<div class=''>
+		<div>{{album.title}}</div>
+		<ul ng-repeat='image in album.content'>
+			<li>
+				<img ng-src='/contents/{{image}}'>
+				<div img-info></div img-info>
+			</li>
+		</ul>
+	</div>
+	<div ng-hide='landing'>
+		<div>Share Link</div>
+		<div>http://smashingImmage.com/#/a/{{album.link}}</div>
+	</div>
+</section>
+
+<!-- <section class='clearfix row horizontal-center'>
+	<div class='col-lg-8 col-md-8 col-sm-12 col-xs-12'>
+		<div>{{album.title}}</div>
+		<ul ng-repeat='image in album.content'>
+			<li>
+				<img ng-src='/contents/{{image}}'>
+				<div img-info></div img-info>
+			</li>
+		</ul>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+		<div>Share Link</div>
+		<div>http://smashingImmage/#/a/{{album.link}}</div>
+	</div>
+</section> -->
+

@@ -1,0 +1,19 @@
+<section class='horizontal-center'>
+  <!-- <a ui-sref='add' class='btn btn-info'>add a new image</a> -->
+  <uib-carousel class='padding-top-70' interval="myInterval" no-wrap="noWrapSlides">
+    <uib-slide class='height-650' ng-repeat="slide in slides" active="slide.active" >
+      <div>
+        <img ng-src="/contents/{{slide.fileName}}" style="margin:auto;">
+      </div>
+      <div class="carousel-caption" style='bottom:160px'>
+        <h4>{{slide.title}}</h4>
+        <p>{{slide.description}}</p>
+      </div>
+      <div class='padding-bot-20px' style='margin-top: 100px'>
+        <div>Share Link</div>
+        <div>http://smashingimmage.com/#/i/{{slide.link}}</div>
+      </div>
+    </uib-slide>
+  </uib-carousel>
+</section>
+
