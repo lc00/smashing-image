@@ -25,7 +25,8 @@
                 var info = {title: obj.title, description: obj.description};     
                 return info;
             });
-
+console.log($scope.files)
+console.log($scope.albumName)
             if ($scope.files && $scope.files.length) {
                 Upload.upload({
                     url: '/api/v1/images/add',
