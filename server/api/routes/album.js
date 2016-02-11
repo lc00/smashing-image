@@ -5,6 +5,7 @@ var passport = require('../config/passport');
 var albumController = new AlbumController();
 var router = express.Router();
 
+
 // router.post('/create', passport.authenticate('bearer', {session: false}), albumController.create);
 router.get('/user', passport.authenticate('bearer', {session: false}), albumController.getAlbumsByUser);
 
