@@ -9,9 +9,7 @@
         $scope.files = null;
         $scope.albumName = null;
 
-
         var token = authToken.getToken();
-
 
         $scope.remove = function(file){
             var idx = $scope.files.indexOf(file);
@@ -27,7 +25,8 @@
                 var info = {title: obj.title, description: obj.description};     
                 return info;
             });
-
+console.log($scope.files)
+console.log($scope.albumName)
             if ($scope.files && $scope.files.length) {
                 Upload.upload({
                     url: '/api/v1/images/add',
@@ -39,10 +38,8 @@
                         moreFileInfo: moreInfo
                     }
                 }).then(function (response) {
-                  $timeout(function () {
-                    $scope.result = response.data.message;
-                    console.log($scope.result)
-                  });
+                    $scope.successMsg = 'successfully saved';
+                    console.log(response)
                 }, function (response) {
                   if (response.status > 0)
                     $scope.errorMsg = response.status + ': ' + response.data;
