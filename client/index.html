@@ -11,17 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
 <body ng-app='smashingImmage' class='container ng-cloak'>
+	<div class='min-height'>
+		<div ng-include="'views/header.html'" ></div>
 
-	<div ng-include="'views/header.html'" ></div>
+		<div ui-view class='margin-top-bot-20'></div>
 
-	<div ui-view class='margin-top-bot-20'></div>
-
-	<div class='alert alert-{{alert.type}} animated main-alert' ng-class="{'flipInY': alert.show, 'flipOutY': !alert.show, 'alert-hidden': !alert.hasBeenShown}">
-		<strong>{{alert.title}}</strong>
-		{{alert.message}}
+		<div class='alert alert-{{alert.type}} animated main-alert' ng-class="{'flipInY': alert.show, 'flipOutY': !alert.show, 'alert-hidden': !alert.hasBeenShown}">
+			<strong>{{alert.title}}</strong>
+			{{alert.message}}
+		</div>
 	</div>
-
-	<div ng-include="'views/footer.html'" class='test'></div>
+	<div ng-include="'views/footer.html'"></div>
 
 	<script src='/bower_components/angular/angular.js'></script>
 	<script src="/bower_components/angular-animate/angular-animate.js"></script>
