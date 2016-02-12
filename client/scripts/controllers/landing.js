@@ -12,7 +12,6 @@
 			// alert('warning', 'Opps', 'Could not get content');
      	return;
     }
-console.log(result)
 		$scope.images = result.data[0];
 		$scope.albums = result.data[1];
 
