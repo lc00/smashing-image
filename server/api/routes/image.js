@@ -30,7 +30,8 @@ router.post('/add', upload.any(), passport.authenticate('bearer', {session: fals
 
 
 // get request from album
-router.get('/get', passport.authenticate('bearer', {session: false}), imageController.get);
+router.get('/get', imageController.get);
+
 router.get('/user', passport.authenticate('bearer', {session: false}), imageController.getImagesByUser);
 
 // get request for imageLink

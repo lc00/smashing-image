@@ -33,7 +33,6 @@ ContentController.prototype.get = function(req, res, next){
 
 	Promise.all(promiseArr)
 		.then(function(result){
-			console.log(result)
 			res.json(result);
 		})
 

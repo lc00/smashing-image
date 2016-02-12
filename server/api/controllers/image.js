@@ -24,7 +24,6 @@ ImageController.prototype.saveImages = function(req){
 				var f = moreFileInfo.shift();
 				if(f.title) {	
 					title = f.title;
-					console.log(typeof title)
 				}
 				if(f.description) {
 				  description = f.description;
