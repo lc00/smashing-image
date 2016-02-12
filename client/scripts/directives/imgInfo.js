@@ -12,7 +12,7 @@
 				var token = authToken.getToken();
 				// console.log($scope)
 				$http
-					.get('/api/v1/images/get', {params: {"imageFileName": $scope.image, "access_token": token }})
+					.get('/api/v1/images/get', {params: {"imageFileName": $scope.image }})
 					.then(function succssCallback(response){
 						$scope.title = response.data[0].title;
 						$scope.description = response.data[0].description;

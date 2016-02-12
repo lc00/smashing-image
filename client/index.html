@@ -14,7 +14,7 @@
 
 	<div ng-include="'views/header.html'" ></div>
 
-	<div ui-view class='margin-top-bot-20 ng-cloak'></div>
+	<div ui-view class='margin-top-bot-20'></div>
 
 	<div class='alert alert-{{alert.type}} animated main-alert' ng-class="{'flipInY': alert.show, 'flipOutY': !alert.show, 'alert-hidden': !alert.hasBeenShown}">
 		<strong>{{alert.title}}</strong>

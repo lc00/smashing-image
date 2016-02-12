@@ -4,6 +4,10 @@
 	background-color: peachpuff;
 }*/
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .header {
 	margin: 10px 0;
 
@@ -242,3 +246,14 @@ ul {
   cursor: pointer;
 
 }
+
+.app-name {
+  line-height:41px;
+}
+
+@media (max-width: 500px) {
+  .app-name {
+    line-height: 1.1;
+  }
+}
+

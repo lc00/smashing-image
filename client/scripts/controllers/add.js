@@ -6,8 +6,6 @@
     Add.$inject = ['$scope', 'Upload', '$timeout', 'authToken'];
 
     function Add ($scope, Upload, $timeout, authToken) {
-        // $scope.files = null;
-        // $scope.albumName = null;
 
         var token = authToken.getToken();
 
@@ -25,8 +23,7 @@
                 var info = {title: obj.title, description: obj.description};     
                 return info;
             });
-console.log($scope.files)
-console.log($scope.albumName)
+
             if ($scope.files && $scope.files.length) {
                 Upload.upload({
                     url: '/api/v1/images/add',
@@ -39,10 +36,9 @@ console.log($scope.albumName)
                     }
                 }).then(function (response) {
                     $scope.successMsg = 'successfully saved';
-                    console.log(response)
                 }, function (response) {
                   if (response.status > 0)
-                    $scope.errorMsg = response.status + ': ' + response.data;
+                    $scope.errorMsg = "problem with upload";
                 }, function (evt) {
                   // Math.min is to fix IE which reports 200% sometimes
                   $scope.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
