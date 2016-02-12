@@ -5,10 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha ./server/test --reporter dot",
-    "start": "node server/bin/www.js",
+    "start": "export PORT=80 && node server/bin/www.js",
     "dev": "export NODE_DEV=dev && nodemon server/bin/www.js",
     "postinstall": "bower install"
-
   },
   "repository": {
     "type": "git",
