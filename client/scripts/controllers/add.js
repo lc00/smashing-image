@@ -6,8 +6,8 @@
     Add.$inject = ['$scope', 'Upload', '$timeout', 'authToken'];
 
     function Add ($scope, Upload, $timeout, authToken) {
-        $scope.files = null;
-        $scope.albumName = null;
+        // $scope.files = null;
+        // $scope.albumName = null;
 
         var token = authToken.getToken();
 

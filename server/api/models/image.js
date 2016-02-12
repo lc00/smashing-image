@@ -12,10 +12,7 @@ var ImageSchema = new mongoose.Schema({
 		type: Date, 
 		default: Date.now 
 	},
-	albumName: {
-		type: String,
-		default: null
-	},
+	albumName: String,
 	isPublic: {
 		type: Boolean,
 		default: true

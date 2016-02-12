@@ -14,19 +14,17 @@ var router = express.Router();
 router.post('/add', upload.any(), passport.authenticate('bearer', {session: false}), function(req, res, next){
 	imageController.saveImages(req)
 		.then(function(result){
-			// console.log('success')
-			// console.log(result)
-
-			if(result[0].albumName != '') {
+			if(result[0].albumName ) {
 				return albumController.add(result, res);
 			}
 
-			res.status(201).json(result);
+			return res.status(201).json(result);
+
 		})
 		.catch(function(error){
 			console.log('error')
 			console.log(error)
-			res.status(500).json(error);
+			return res.status(500).json(error);
 		})
 });
 

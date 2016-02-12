@@ -14,7 +14,7 @@ ContentController.prototype.get = function(req, res, next){
 	var promiseArr = [];
 
 	promiseArr.push(new Promise(function(resolve, reject){
-		Image.find({isPublic: true, album: false})
+		Image.find({isPublic: true, albumName: null})
 					.sort('-date')
 					.exec(function(err, images){
 						if(err) return reject(err);
@@ -31,9 +31,9 @@ ContentController.prototype.get = function(req, res, next){
 					})
 	}));
 
-
 	Promise.all(promiseArr)
 		.then(function(result){
+			console.log(result)
 			res.json(result);
 		})
 

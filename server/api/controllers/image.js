@@ -13,20 +13,18 @@ ImageController.prototype.saveImages = function(req){
 	var promiseArr = [];
 	var fileArr = req.files;
 
-// console.log(req.body)
-// console.log(req.files)
-
 	fileArr.forEach(function(file){
 		promiseArr.push(new Promise(function(resolve, reject){
 
 			var moreFileInfo = req.body.moreFileInfo;
 			var title;
 			var description;
-	
+
 			if(moreFileInfo) {
 				var f = moreFileInfo.shift();
 				if(f.title) {	
 					title = f.title;
+					console.log(typeof title)
 				}
 				if(f.description) {
 				  description = f.description;
@@ -35,7 +33,7 @@ ImageController.prototype.saveImages = function(req){
 
 			var fileName = file.filename;
 			var contentType = file.mimetype;
-			var albumName = req.body.albumName;
+			var albumName = req.body.albumName || null;
 			var link = chance.string({pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'});
 			var isPublic = req.body.isPublic;
 			var userId = req.user._id;
