@@ -242,3 +242,12 @@ ul {
   cursor: pointer;
 
 }
+
+.app-name {
+  line-height:41px;
+}
+
+@media (max-width: 500px) {
+  .app-name {
+    line-height: 1.1;
+  }
