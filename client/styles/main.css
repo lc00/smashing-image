@@ -3,6 +3,10 @@
 	height: 65px;
 	background-color: peachpuff;
 }*/
+/*body {
+  width: 1000px;
+}
+*/
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
@@ -175,13 +179,13 @@ ul {
 }
 
 .account {
-  width: 100px;
+  width: 140px;
   text-align: center;
 } 
 
 .user-dropdown-container {
   position: absolute;
-  right: 25px;
+  right: 45px;
   z-index: 1000;
 }
 
@@ -261,3 +265,10 @@ ul {
   }
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.purple {
+  color: #4E5DA9;
+}
