@@ -1,7 +1,7 @@
 <div class='container no-padding' ng-controller='Header'>
 	<header class='header'>
 		<ul class='nav nav-pills pull-right'>
-			<li ui-sref-active='active'>
+			<li ng-show='isAuthenticated()' ui-sref-active='active'>
 				<a ui-sref='add'>Upload Images</a>
 			</li>
 			<li class='account' ng-hide='isAuthenticated()' ui-sref-active='active'>
