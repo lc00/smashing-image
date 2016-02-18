@@ -1,7 +1,5 @@
 <section class='horizontal-center clearfix'>
-<!-- 	<div>
-		<a ui-sref='add' class='btn btn-info'>add a new album</a>
-	</div> -->
+	<a ng-show='!albums.length' ui-sref='add' class='btn btn-info'>add a new album</a>
 	<div ng-repeat='album in albums' class='col-md-3 col-sm-4 col-xs-6 horizontal-center margin-bot-30'>
 		<div class='file-container'>
 			<a ng-click='start(album)'>
