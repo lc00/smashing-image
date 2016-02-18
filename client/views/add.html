@@ -16,7 +16,7 @@
       </label> -->
     </span>
   </div>
-  <ul ng-repeat='file in files'>
+  <ul ng-repeat='file in files' class='sample-show-hide'>
     <li>
       <img ngf-thumbnail="file" class="thumb margin-right-10">
       <!-- <div> -->
@@ -34,7 +34,7 @@
       <button class='btn' ng-click="remove(file)">Remove</button>
     </li>
   </ul>
-  <span class="progress-display" ng-show="progress >= 0">
+  <span class="progress-display" ng-show="progress" >
     <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
   </span>
   <div>

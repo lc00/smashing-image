@@ -3,9 +3,11 @@
      .module('smashingImmage')
      .controller('Add', Add);
 
-    Add.$inject = ['$scope', 'Upload', '$timeout', 'authToken'];
+    Add.$inject = ['$scope', 'Upload', '$timeout', 'authToken', 'alert', '$state'];
 
-    function Add ($scope, Upload, $timeout, authToken) {
+    function Add ($scope, Upload, $timeout, authToken, alert, $state) {
+
+$scope.progress = null;
 
         var token = authToken.getToken();
 
@@ -35,13 +37,23 @@
                         moreFileInfo: moreInfo
                     }
                 }).then(function (response) {
-                    $scope.successMsg = 'successfully saved';
+                    alert('success', 'Great', 'Successfully saved');
+                    $timeout(function() {
+                        if($scope.albumName){
+                            return $state.go('albumInner', {album: response.data});
+                        }
+                        $state.go('images'); 
+                    }, 3000);
+
                 }, function (response) {
                   if (response.status > 0)
-                    $scope.errorMsg = "problem with upload";
+                    // $scope.errorMsg = "problem with upload";
+                    alert('warning', 'Opps', 'Problem with upload');
+
                 }, function (evt) {
                   // Math.min is to fix IE which reports 200% sometimes
                   $scope.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+                  
                 })
             }
         };

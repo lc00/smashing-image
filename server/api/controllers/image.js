@@ -60,7 +60,9 @@ ImageController.prototype.saveImages = function(req){
 
 
 ImageController.prototype.getImagesByUser = function(req, res, next){
-	Image.find({userId: req.user._id}, function(err, images){
+	Image.find({userId: req.user._id})
+				.sort('-date')
+				.exec(function(err, images){
 		if(err) res.status(500).json(err);
 		
 		res.status(200).json(images);

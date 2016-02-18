@@ -94,7 +94,7 @@ form .progress {
 .progress-display {
     display: inline-block;
     width: 350px;
-    border: 3px groove #CCC;
+    /*border: 3px groove #CCC;*/
 }
 
 .progress-display div {
@@ -271,4 +271,13 @@ ul {
 
 .purple {
   color: #4E5DA9;
+}
+
+.sample-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+  opacity:0;
 }

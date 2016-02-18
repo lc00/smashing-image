@@ -32,20 +32,20 @@ AlbumController.prototype.add = function(fileObjArr, res){
 	});
 }
 
-
-
 // get public albums from most recent to the oldest
-AlbumController.prototype.get = function(req, res, next){
+// AlbumController.prototype.get = function(req, res, next){
 
-	Album.find({isPublic: true}, function(err, albums){
-		if(err) res.status(500).json(err);
+// 	Album.find({isPublic: true}, function(err, albums){
+// 		if(err) res.status(500).json(err);
 
-		res.status(200).json(albums);
-	});
-};
+// 		res.status(200).json(albums);
+// 	});
+// };
 
 AlbumController.prototype.getAlbumsByUser = function(req, res, next){	
-	Album.find({userId: req.user._id}, function(err, albums){
+	Album.find({userId: req.user._id})
+				.sort('-date')
+				.exec(function(err, albums){
 		if(err) res.status(500).json(err);
 // console.log(albums)
 		res.status(200).json(albums);
