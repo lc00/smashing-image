@@ -1,5 +1,5 @@
 <section class='horizontal-center'>
-  <!-- <a ui-sref='add' class='btn btn-info'>add a new image</a> -->
+  <a ng-show='!slides.length' ui-sref='add' class='btn btn-info'>add a new image | album</a>
   <uib-carousel class='padding-top-70' interval="myInterval" no-wrap="noWrapSlides">
     <uib-slide class='height-650' ng-repeat="slide in slides" active="slide.active" >
       <div>
