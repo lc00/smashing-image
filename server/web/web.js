@@ -1,12 +1,18 @@
+// if(process.env.NODE_ENV == 'dev'){
+// 	require('dotenv').load();
+// }
+
+// var env = prod || process.env.
+
 var express = require('express');
 
 var router = express.Router();
 
-router.use('/', express.static(__dirname + '/../../client'));
+router.use('/', express.static(__dirname + '/../../client/dev'));
 
 router.get('/*', function(req, res){
 	var options = {
-		root: __dirname + '/../../client',
+		root: __dirname + '/../../client/dev',
 		dotfiles: 'deny'
 	};
 

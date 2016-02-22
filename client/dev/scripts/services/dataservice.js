@@ -5,7 +5,7 @@
 		.module('smashingImmage')
 		.factory('dataservice', dataservice);
 
-	function dataservice($http, authToken){
+	function dataservice($http, auth){
 
 		var service = {
 			getImagesByUser: getImagesByUser,
@@ -18,7 +18,7 @@
 		return service;
 
 		function getImagesByUser(){
-			var token = authToken.getToken();
+			var token = auth.getToken();
 			return	$http
 									.get('/api/v1/images/user/?access_token=' + token)
 								 	.then(function successCallback(response){ 
@@ -29,7 +29,7 @@
 		}
 
 		function getAlbumsByUser(){
-			var token = authToken.getToken();
+			var token = auth.getToken();
 
 			return $http
 							.get('/api/v1/albums/user?access_token=' + token)

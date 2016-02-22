@@ -5,7 +5,7 @@
 		.module('smashingImmage')
 		.factory('dataStorage', dataStorage);
 
-	function dataStorage($http, authToken){
+	function dataStorage($http, auth){
 		var obj = {}
 
 		var data = {

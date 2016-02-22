@@ -11,7 +11,7 @@
 		$stateProvider
 			.state('landing', {
 				url: '/',
-				templateUrl: '../views/landing.html',
+				templateUrl: './views/landing.html',
 				controller: 'Landing',
 				resolve: {
 					result: function(dataservice){
