@@ -9,9 +9,9 @@
 		return {
 			templateUrl: '../views/albumDisplay.html',
 			restrict: 'E',
-			controller: function($scope, $state, $http, authToken){		
+			controller: function($scope, $state, $http, auth){		
 
-				var token = authToken.getToken();
+				var token = auth.getToken();
 
 				$scope.start = function(){
 					// console.log($scope.album)

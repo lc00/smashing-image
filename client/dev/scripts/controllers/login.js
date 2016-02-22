@@ -5,9 +5,9 @@
 		.module('smashingImmage')
 		.controller('LogIn', LogIn);
 
-	LogIn.$inject = ['$scope', '$http', 'authToken', '$state', 'alert'];
+	LogIn.$inject = ['$scope', '$http', 'auth', '$state', 'alert'];
 
-	function LogIn($scope, $http, authToken, $state, alert){
+	function LogIn($scope, $http, auth, $state, alert){
 
 		$scope.submit = function(user){
 			$http
@@ -16,7 +16,7 @@
 						password: user.password
 				})
 				.then(function successCallback(response){
-					authToken.setToken(response.data);					
+					auth.setUser(response.data);					
 					$state.go('images');
 				},
 				function errorCallback(response){

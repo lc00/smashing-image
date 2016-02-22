@@ -5,9 +5,9 @@
 		.module('smashingImmage')
 		.controller('SignUp', SignUp);
 
-	SignUp.$inject = ['$scope', '$http', 'alert', '$state', 'authToken'];
+	SignUp.$inject = ['$scope', '$http', 'alert', '$state', 'auth'];
 
-	function SignUp($scope, $http, alert, $state, authToken){
+	function SignUp($scope, $http, alert, $state, auth){
 		$scope.submit = function(user){
 			$http
 				.post('/api/v1/users', {
@@ -17,7 +17,7 @@
 				})
 				.then(function successCallback(response){
 					// alert('success', 'Ok', 'You are registered');
-					authToken.setToken(response.data);
+					auth.setUser(response.data);
 					$state.go('images');
 				},
 				function errorCallback(response){

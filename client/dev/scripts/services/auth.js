@@ -2,19 +2,19 @@
 (function(){
 	angular
 		.module('smashingImmage')
-		.factory('authToken', authToken);
+		.factory('auth', auth);
 
-		authToken.$inject = ['$window'];
+		auth.$inject = ['$window'];
 
-		function authToken($window) {
+		function auth($window) {
 			var storage = $window.localStorage;
 			var currentUser;
 			var cachedToken;
 			// var currentUser = 'currentUser';
 		  var isAuthenticated = false;
 
-			var authToken = {
-				setToken: function(currentUser){
+			var auth = {
+				setUser: function(currentUser){
 						currentUser = JSON.stringify(currentUser);
 						storage.setItem('currentUser', currentUser);
 						isAuthenticated = true;
@@ -28,9 +28,9 @@
 						return cachedToken;
 				},
 				isAuthenticated: function(){
-					return !!authToken.getToken();
+					return !!auth.getToken();
 				},
-				removeToken: function(){
+				removeUser: function(){
 					cachedToken = null;
 					storage.clear(currentUser);
 					isAuthenticated = false;
@@ -53,7 +53,7 @@
 				}
 			};
 
-			return authToken;
+			return auth;
 		}
 
 }());

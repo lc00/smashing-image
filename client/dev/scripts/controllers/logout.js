@@ -5,10 +5,10 @@
 		.module('smashingImmage')
 		.controller('LogOut', LogOut);
 
-	LogOut.$inject = ['authToken', '$state', '$http', 'alert'];
+	LogOut.$inject = ['auth', '$state', '$http', 'alert'];
 
-	function LogOut(authToken, $state, $http, alert){
-		var token = authToken.getToken();
+	function LogOut(auth, $state, $http, alert){
+		var token = auth.getToken();
 
 		$http
 				.post('/api/v1/users/logout', {
@@ -16,7 +16,7 @@
 				})
 				.then(function successCallback(response){
 					// alert('success', 'Ok', 'You are registered');
-					authToken.removeToken();
+					auth.removeUser();
 					$state.go('landing');
 				},
 				function errorCallback(response){
