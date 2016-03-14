@@ -8,8 +8,8 @@
 		return {
 			templateUrl: '../views/imgInfo.html',
 			restrict: 'EA',
-			controller: function($scope, authToken, $http){
-				var token = authToken.getToken();
+			controller: function($scope, auth, $http){
+				var token = auth.getToken();
 				// console.log($scope)
 				$http
 					.get('/api/v1/images/get', {params: {"imageFileName": $scope.image }})

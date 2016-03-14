@@ -3,13 +3,13 @@
      .module('smashingImmage')
      .controller('Add', Add);
 
-    Add.$inject = ['$scope', 'Upload', '$timeout', 'authToken', 'alert', '$state'];
+    Add.$inject = ['$scope', 'Upload', '$timeout', 'auth', 'alert', '$state'];
 
-    function Add ($scope, Upload, $timeout, authToken, alert, $state) {
+    function Add ($scope, Upload, $timeout, auth, alert, $state) {
 
 $scope.progress = null;
 
-        var token = authToken.getToken();
+        var token = auth.getToken();
 
         $scope.remove = function(file){
             var idx = $scope.files.indexOf(file);
