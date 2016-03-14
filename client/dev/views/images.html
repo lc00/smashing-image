@@ -3,7 +3,7 @@
   <uib-carousel class='padding-top-70' interval="myInterval" no-wrap="noWrapSlides">
     <uib-slide class='height-650' ng-repeat="slide in slides" active="slide.active" >
       <div>
-        <img ng-src="/contents/{{slide.fileName}}" style="margin:auto;">
+        <img ng-src="/contents/{{slide.fileName}}" style="margin:auto" class='image-size'>
       </div>
       <div class="carousel-caption" style='bottom:160px'>
         <h4>{{slide.title}}</h4>

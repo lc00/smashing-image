@@ -281,3 +281,7 @@ ul {
 .sample-show-hide.ng-hide {
   opacity:0;
 }
+
+.image-size {
+  height: 390px !important;
+}
