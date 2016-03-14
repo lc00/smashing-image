@@ -46,6 +46,20 @@
     "grunt-env": "^0.4.4",
     "grunt-express-server": "^0.5.2",
     "grunt-sails-linker": "^0.10.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-sinon-chai": "^1.2.0",
+    "kerberos": "0.0.18",
+    "lolex": "^1.4.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.4",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
     "supertest": "^1.1.0"
   }
 }
