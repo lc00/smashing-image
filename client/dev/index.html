@@ -3,10 +3,13 @@
 <head>
 	<title>Smashing Image</title>
 	<meta	charset='utf-8'>
+	<meta name='viewport' content='width=device-width initial-scale=1'/>
 	<base href='/'></base>
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href='/bower_components/bootstrap/dist/css/bootstrap.css'>
-	<link rel="stylesheet" type="text/css" href="/bower_components/animate.css/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href='/bower_components/bootstrap/dist/css/bootstrap.css'> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/bower_components/animate.css/animate.css"> -->
 	<link rel="stylesheet" type="text/css" href='/styles/bootstrap-superhero.css'>
 	<link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
@@ -23,12 +26,18 @@
 	</div>
 	<div ng-include="'views/footer.html'"></div>
 
-	<script src='/bower_components/angular/angular.js'></script>
-	<script src="/bower_components/angular-animate/angular-animate.js"></script>
-	<script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script>
-	<script src='/bower_components/ng-file-upload/ng-file-upload-shim.js'></script>
-	<script src='/bower_components/ng-file-upload/ng-file-upload.js'></script>
-	<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js'></script>
+	<!-- // <script src='/bower_components/angular/angular.js'></script> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js'></script>
+	<!-- // <script src="/bower_components/angular-animate/angular-animate.js"></script> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js'></script>
+	<!-- // <script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/11.2.3/ng-file-upload-shim.min.js'></script>
+	<!-- // <script src='/bower_components/ng-file-upload/ng-file-upload-shim.js'></script> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/11.2.3/ng-file-upload.min.js'></script>
+	<!-- // <script src='/bower_components/ng-file-upload/ng-file-upload.js'></script> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js'></script>
+	<!-- // <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'></script> -->
 
 	<script src='/scripts/app.js'></script>	
 
@@ -58,6 +67,9 @@
 	<script src='/scripts/directives/albumDisplay.js'></script>
 	<script src='/scripts/directives/imgInfo.js'></script>
 	<script src='/scripts/directives/editInPlace.js'></script>
+
+
+	<script src='/scripts/services/extra.js'></script>
 
 </body>
 </html>
