@@ -10,21 +10,20 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'sinon-chai'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
         'bower_components/angular/angular.js',
+        'bower_components/angular-mocks/angular-mocks.js',        
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-ui-router/release/angular-ui-router.js',
         'bower_components/ng-file-upload/ng-file-upload-shim.js',
         'bower_components/ng-file-upload/ng-file-upload.js',
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-        'bower_components/angular-mocks/angular-mocks.js',
         'client/dev/scripts/**/*.js',
-        'client/dev/scripts/*.js',
-        'client/dev/tests/*.mocha.js'
+        'client/dev/tests/services/*.js'
     ],
 
 
@@ -43,13 +42,13 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
-    coverageReporter: {
-      // type : 'html',
-      type : 'text-summary',
-      dir : 'coverage/'
-    },
+    // coverageReporter: {
+    //   // type : 'html',
+    //   type : 'text-summary',
+    //   dir : 'coverage/'
+    // },
 
     // web server port
     port: 9876,
