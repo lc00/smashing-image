@@ -27,10 +27,10 @@ describe('dataservice', function(){
 				response = data;
 			});
 
-		expect($httpBackend.flush).not.toThrow();
+		// expect($httpBackend.flush).not.toThrow();
+		$httpBackend.flush()
 
-
-		// expect(response).toEqual(landingPageContent);  
+		expect(response).toEqual(landingPageContent);  
 	});
 
 	it('should handle error', function(){

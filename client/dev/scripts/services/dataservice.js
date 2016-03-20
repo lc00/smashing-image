@@ -55,19 +55,19 @@
 
 
 		function getContent(){
-			// return httpPromise('/api/v1/contents')
+			return httpPromise('/api/v1/contents')
 			// 	.then(function successCallback(response){ 
 			// 					return response; 
 			// 				}, function errorCallback(response){
 			// 					return response; 
 			// 				});
-			return $http
-								.get('/api/v1/contents')
-								.then(function successCallback(response){ 
-									return response; 
-								}, function errorCallback(response){
-									return response; 
-								});
+			// return $http
+			// 					.get('/api/v1/contents')
+			// 					.then(function successCallback(response){ 
+			// 						return response; 
+			// 					}, function errorCallback(response){
+			// 						return response; 
+			// 					});
 	      
 		}
 
