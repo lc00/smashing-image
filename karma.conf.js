@@ -23,7 +23,8 @@ module.exports = function(config) {
         'bower_components/ng-file-upload/ng-file-upload.js',
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
         'client/dev/scripts/**/*.js',
-        'client/dev/tests/services/*.js'
+        'client/dev/tests/**/*.js',
+        'client/dev/views/*.html'
     ],
 
 
@@ -35,9 +36,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      // 'src/*.js': ['coverage']
+      'client/dev/views/**/*.html': ['ng-html2js']
     },
 
+    ngHtml2JsPreprocessor: {
+      moduleName: 'templates'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

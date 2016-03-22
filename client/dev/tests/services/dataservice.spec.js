@@ -10,10 +10,6 @@ describe('dataservice', function(){
 		$httpBackend = _$httpBackend_;
 	}));
 
-	afterEach(function(){
-		$httpBackend.verifyNoOutstandingExpectation();
-		$httpBackend.verifyNoOutstandingRequest();
-	})
 
 	it('should return landing page content', function(){
 		var response;
