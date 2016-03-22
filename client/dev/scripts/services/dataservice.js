@@ -5,7 +5,7 @@
 		.module('smashingImmage')
 		.factory('dataservice', dataservice);
 
-	function dataservice($http, auth){
+	function dataservice($http, auth, $q){
 
 		var service = {
 			getImagesByUser: getImagesByUser,
@@ -16,6 +16,19 @@
 		};
 
 		return service;
+
+		function httpPromise(url){
+			var deferred = $q.defer();
+			$http.get(url)
+				.success(function(data){
+					deferred.resolve(data);
+				})
+				.error(function(){
+					deferred.reject();
+				}); 
+
+			return deferred.promise;
+		}
 
 		function getImagesByUser(){
 			var token = auth.getToken();
@@ -42,14 +55,19 @@
 
 
 		function getContent(){
-
-			return $http
-								.get('/api/v1/contents')
-								.then(function successCallback(response){ 
-									return response; 
-								}, function errorCallback(response){
-									return response; 
-								});
+			return httpPromise('/api/v1/contents')
+			// 	.then(function successCallback(response){ 
+			// 					return response; 
+			// 				}, function errorCallback(response){
+			// 					return response; 
+			// 				});
+			// return $http
+			// 					.get('/api/v1/contents')
+			// 					.then(function successCallback(response){ 
+			// 						return response; 
+			// 					}, function errorCallback(response){
+			// 						return response; 
+			// 					});
 	      
 		}
 
