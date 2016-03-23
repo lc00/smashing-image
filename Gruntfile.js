@@ -31,7 +31,11 @@ module.exports = function(grunt) {
 					'sails-linker:dev-bower-JS',
 					'sails-linker:dev-local-JS',
 					'sails-linker:dev-bower-CSS',
-					'sails-linker:dev-local-CSS'
+					'sails-linker:dev-local-CSS',
+					'sails-linker:prod-bower-JS',
+					'sails-linker:prod-local-JS',
+					'sails-linker:prod-bower-CSS',
+					'sails-linker:prod-local-CSS'
 				],
 				options: {
 					spawn: false,
@@ -79,6 +83,10 @@ module.exports = function(grunt) {
 					spawn: false
 				}
 			}
+			// karma: {
+			// 	files: ['client/dev/scripts/**/*.js', 'client/dev/tests/**/*.js'],
+			// 	tasks: ['karma:unit:run']
+			// }
 		},
 		jshint: {
 			all: ['Gruntfile.js', 'client/dev/**/*.js', 'server/**/*.js'],
@@ -185,14 +193,14 @@ module.exports = function(grunt) {
 		uglify: {
 			prod: {
 				files: {
-					'client/prod/scripts/threePages.min.js': allDevJsFiles
+					'client/prod/scripts/smashingImmage.min.js': allDevJsFiles
 				}
 			}
 		},
 		cssmin: {
 			prod: {
 				files: {
-					'client/prod/styles/threePages.min.css': allDevCssFiles
+					'client/prod/styles/smashingImmage.min.css': allDevCssFiles
 				}
 			}
 		},
@@ -218,13 +226,13 @@ module.exports = function(grunt) {
 		express: {
 			dev: {
 				options: {
-					script: 'server/app.js',
+					script: 'server/bin/www.js',
 					output: 'this app is listening at port number 7000'
 				}
 			},
 			prod: {
 				options: {
-					script: 'server/app.js',
+					script: 'server/bin/www.js',
 					output: 'this app is listening at port number 6500',
 					// keeps this sub-task/server running; therefore, express.prod is the last task
 					// in the lineup for 'grunt prod'
@@ -232,7 +240,23 @@ module.exports = function(grunt) {
 				}
 			}
 
-		}
+		},
+		karma: {
+			unit: {
+				configFile: 'karma.conf.js'
+			}
+		},
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'results.txt', // Optionally capture the reporter output to a file 
+          quiet: false, // Optionally suppress output to standard out (defaults to false) 
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false) 
+        },
+        src: ['server/tests/**/*.js']
+      }
+    }
 	});
 
 	// equivalent to require in grunt
@@ -244,9 +268,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
-	grunt.registerTask('default', ['watch']);
+
+	grunt.registerTask('default', ['mochaTest', 'karma']);
+	// grunt.registerTask('karma', ['karma']);
 	grunt.registerTask('dev', ['env:dev','sails-linker:dev-bower-JS', 'sails-linker:dev-local-JS', 'sails-linker:dev-bower-CSS','sails-linker:dev-local-CSS', 'express:dev',
  'watch']);
-	grunt.registerTask('prod', ['env:prod', 'uglify', 'cssmin', 'copy', 'sails-linker:prod-local-JS', 'sails-linker:prod-local-CSS', 'sails-linker:prod-bower-JS', 'sails-linker:prod-bower-CSS', 'express:prod']);
+	grunt.registerTask('prod', ['env:prod', 'uglify', 'cssmin', 'copy', 'sails-linker:prod-local-JS', 'sails-linker:prod-local-CSS', 'sails-linker:prod-bower-JS', 'sails-linker:prod-bower-CSS', 'mochaTest']);
 };

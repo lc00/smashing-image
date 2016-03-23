@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smashing Image</title>
+	<meta	charset='utf-8'>
+	<meta name='viewport' content='width=device-width initial-scale=1'/>
+	<base href='/'></base>
+	
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	<!-- START BOWER CSS INJECT -->
+	
+	<!-- END INJECT -->
+
+	<!-- START LOCAL CSS INJECT -->
+	<link rel="stylesheet" type="text/css" href="/styles/smashingImmage.min.css"></link>
+	<!-- END INJECT -->
+
+</head>
+<body ng-app='smashingImmage' class='container ng-cloak'>
+	<div class='min-height'>
+		<div ng-include="'views/header.html'" ></div>
+
+		<div ui-view class='margin-top-bot-20'></div>
+
+		<div class='alert alert-{{alert.type}} animated main-alert' ng-class="{'flipInY': alert.show, 'flipOutY': !alert.show, 'alert-hidden': !alert.hasBeenShown}">
+			<strong>{{alert.title}}</strong>
+			{{alert.message}}
+		</div>
+	</div>
+	<div ng-include="'views/footer.html'"></div>
+
+	<!-- START BOWER JS INJECT -->
+	
+	<!-- END INJECT -->
+
+	<!-- START LOCAL JS INJECT -->
+	<script src="/scripts/smashingImmage.min.js"></script>
+	<!-- END INJECT -->
+
+
+</body>
+</html>
