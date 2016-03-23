@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // register all routes
-app.use('/bower_components', express.static(__dirname + '/../bower_components'));
+app.use('/lib', express.static(__dirname + '/../bower_components'));
 // app.use('/testLib', express.static(__dirname + '/../testing'));
 app.use('/contents', express.static(__dirname + '/../uploads'));
 

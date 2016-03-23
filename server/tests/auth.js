@@ -15,7 +15,7 @@ var should = chai.should();
 // 				username: 'a',
 // 				password: 'a'
 // 			})
-// 			.expect(200)
+// 			.expect(201)
 // 			.end(function(err, res){
 // 				if(err) return done(err);
 // 				res.body.message.should.equal('A new user has been added');
@@ -29,13 +29,14 @@ describe('Sending a POST to login', function(){
 		request(app)
 			.post('/api/v1/users/login')
 			.send({
-				email: 'a@a.com',
-				password: 'a'
+				email: 'u@u',
+				password: 'u'
 			})
 			.expect(200)
 			.end(function(err, res){
 				if(err) return done(err);
-				res.body.message.should.equal('logged in');
+				console.log(res.body)
+				res.body.username.should.equal('u');
 				token = res.body.token;
 				done();
 			});
@@ -49,7 +50,7 @@ describe('Sending a POST to logout', function(){
 			.send({
 				access_token: token
 			})
-			.expect(201)
+			.expect(200)
 			.end(function(err, res){
 				if(err) return done(err);
 				done();

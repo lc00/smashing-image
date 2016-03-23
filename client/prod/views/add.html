@@ -1,0 +1,46 @@
+<form class='text-align-center margin-bot-20'>
+  <div class='margin-bot-20'>
+    <button class='btn' ngf-select ng-model="files" ngf-accept="'image/*'" ngf-pattern="'image/*'" ngf-max-size="20MB" ngf-multiple="true" ngf-model-invalid="errorFiles">
+      Select Images
+    </button>
+    <input ng-model='albumName' placeholder='(optional) Album Name'>
+    <input ng-disabled='!files.length' type='submit' value='Start Upload' ng-click='submit()'>
+  </div>
+  <div ng-show='files.length'>
+    <span class=''>
+      <label class='checkbox-inline'>
+        <input type='checkbox' ng-model='isPublic' ng-init='isPublic=true' >public
+      </label>
+<!--       <label class='checkbox-inline'>
+       <input type='checkbox' ng-model='public' ng-true-value="'private'" ng-false-value="'none'" ng-init='private=true' >private
+      </label> -->
+    </span>
+  </div>
+  <ul ng-repeat='file in files' class='sample-show-hide'>
+    <li>
+      <img ngf-thumbnail="file" class="thumb margin-right-10">
+      <!-- <div> -->
+        <input ng-model='file.title' placeholder='title'></input>
+        <input ng-model='file.description' placeholder='description'></input>  
+      <!-- </div> -->
+<!--       <span class='margin-right-10'>
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model='public' ng-disabled='private'> public
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model='private' ng-disabled='public'> private
+        </label>
+      </span> -->     
+      <button class='btn' ng-click="remove(file)">Remove</button>
+    </li>
+  </ul>
+  <span class="progress-display" ng-show="progress" >
+    <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+  </span>
+  <div>
+    <span>{{successMsg}}</span>
+    <span>{{errorMsg}}</span>
+  </div>
+  
+  
+</form>
