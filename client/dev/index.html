@@ -7,12 +7,15 @@
 	<base href='/'></base>
 	
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href='/bower_components/bootstrap/dist/css/bootstrap.css'> -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="/bower_components/animate.css/animate.css"> -->
-	<link rel="stylesheet" type="text/css" href='/styles/bootstrap-superhero.css'>
-	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<!-- START BOWER CSS INJECT -->
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css"></link>
+	<!-- END INJECT -->
+
+	<!-- START LOCAL CSS INJECT -->
+	<link rel="stylesheet" type="text/css" href="/styles/bootstrap-superhero.css"></link>
+	<link rel="stylesheet" type="text/css" href="/styles/main.css"></link>
+	<!-- END INJECT -->
+
 </head>
 <body ng-app='smashingImmage' class='container ng-cloak'>
 	<div class='min-height'>
@@ -27,50 +30,39 @@
 	</div>
 	<div ng-include="'views/footer.html'"></div>
 
-  <!-- include source files here... -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js'></script>
-	<!-- // <script src='/bower_components/angular/angular.js'></script> -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js'></script>
-	<!-- // <script src="/bower_components/angular-animate/angular-animate.js"></script> -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js'></script>
-	<!-- // <script src='/bower_components/angular-ui-router/release/angular-ui-router.js'></script> -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/11.2.3/ng-file-upload-shim.min.js'></script>
-	<!-- // <script src='/bower_components/ng-file-upload/ng-file-upload-shim.js'></script> -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/11.2.3/ng-file-upload.min.js'></script>
-	<!-- // <script src='/bower_components/ng-file-upload/ng-file-upload.js'></script> -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js'></script>
-	<!-- // <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.js'></script> -->
-	<script src='/bower_components/angular-mocks/angular-mocks.js'></script>
+	<!-- START BOWER JS INJECT -->
+	<script src="/lib/angular/angular.js"></script>
+	<script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="/lib/angular-animate/angular-animate.js"></script>
+	<script src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="/lib/ng-file-upload/ng-file-upload-shim.js"></script>
+	<script src="/lib/ng-file-upload/ng-file-upload.js"></script>
+	<!-- END INJECT -->
 
-	<script src='/scripts/app.js'></script>	
-
-	<script src='/scripts/controllers/landing.js'></script>
-	<script src='/scripts/controllers/imageInner.js'></script>
-	<script src='/scripts/controllers/albumInner.js'></script>
-	<script src='/scripts/controllers/header.js'></script>
-
-
-	<script src='/scripts/controllers/signup.js'></script>
-	<script src='/scripts/controllers/login.js'></script>
-	<script src='/scripts/controllers/logout.js'></script>
-	<script src='/scripts/controllers/add.js'></script>
-	<script src='/scripts/controllers/images.js'></script>
-	<script src='/scripts/controllers/albums.js'></script>
-	<script src='/scripts/controllers/i.js'></script>
-	<script src='/scripts/controllers/a.js'></script>
-
-
-	<script src='/scripts/services/auth.js'></script>
-	<script src='/scripts/services/dataservice.js'></script>
-	<script src='/scripts/services/alert.js'></script>
-
-	<script src='/scripts/services/dataStorage.js'></script>
-
-	<script src='/scripts/directives/imgDisplay.js'></script>
-	<script src='/scripts/directives/albumDisplay.js'></script>
-	<script src='/scripts/directives/imgInfo.js'></script>
-	<script src='/scripts/directives/editInPlace.js'></script>
-
+	<!-- START LOCAL JS INJECT -->
+	<script src="/scripts/app.js"></script>
+	<script src="/scripts/controllers/a.js"></script>
+	<script src="/scripts/controllers/add.js"></script>
+	<script src="/scripts/controllers/albumInner.js"></script>
+	<script src="/scripts/controllers/albums.js"></script>
+	<script src="/scripts/controllers/header.js"></script>
+	<script src="/scripts/controllers/i.js"></script>
+	<script src="/scripts/controllers/imageInner.js"></script>
+	<script src="/scripts/controllers/images.js"></script>
+	<script src="/scripts/controllers/landing.js"></script>
+	<script src="/scripts/controllers/login.js"></script>
+	<script src="/scripts/controllers/logout.js"></script>
+	<script src="/scripts/controllers/signup.js"></script>
+	<script src="/scripts/directives/albumDisplay.js"></script>
+	<script src="/scripts/directives/editInPlace.js"></script>
+	<script src="/scripts/directives/imgDisplay.js"></script>
+	<script src="/scripts/directives/imgInfo.js"></script>
+	<script src="/scripts/services/alert.js"></script>
+	<script src="/scripts/services/auth.js"></script>
+	<script src="/scripts/services/dataStorage.js"></script>
+	<script src="/scripts/services/dataservice.js"></script>
+	<script src="/scripts/services/extra.js"></script>
+	<!-- END INJECT -->
 
 
 </body>

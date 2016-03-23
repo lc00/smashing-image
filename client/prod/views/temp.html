@@ -1,0 +1,20 @@
+<section>
+	{{album.title}}
+	<ul ng-repeat='image in album.content'>
+		<li>
+			<img ng-src='/contents/{{image}}'>
+
+			<img-info>
+				<edit-in-place ng-click='editable()'>
+					<h4>{{title}}</h4>
+					<input ng-model='title' placeholder='title' >
+				</edit-in-place>
+				<edit-in-place>
+						<p>{{description}}</p>
+						<input ng-model='description' placeholder='description' >
+				</edit-in-place>
+			</img-info>
+
+		</li>
+	</ul>
+</section>

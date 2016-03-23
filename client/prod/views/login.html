@@ -1,0 +1,40 @@
+<form name='register' class="form-signin" novalidate>
+  <h1 class="form-signin-heading text-muted">Login</h1>
+  <input type="text" class="form-control" ng-model='user.email' placeholder="Email" required="" autofocus="">
+  <input type="password" class="form-control" ng-model='user.password' placeholder="Password" required="">
+  <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click='submit(user)'>
+    Submit
+  </button>
+  <br />
+  <a class='pull-right purple' ui-sref='signup'>Create account</a>
+</form>
+
+
+<!-- <h3>Log in</h3>
+<form>
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" placeholder="Email" ng-model='user.email'>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" placeholder="Password" ng-model='user.password'>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button ng-click='logIn(user)' class="btn btn-default">Login</button>
+    </div>
+  </div>
+</form>
+<div class='text-align-center'>
+  {{status}}
+</div>
+
+<a ui-sref='signup'><h5>Sign up</h5></a>
+<div ui-view></div>
+ -->
+

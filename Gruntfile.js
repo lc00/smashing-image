@@ -31,7 +31,11 @@ module.exports = function(grunt) {
 					'sails-linker:dev-bower-JS',
 					'sails-linker:dev-local-JS',
 					'sails-linker:dev-bower-CSS',
-					'sails-linker:dev-local-CSS'
+					'sails-linker:dev-local-CSS',
+					'sails-linker:prod-bower-JS',
+					'sails-linker:prod-local-JS',
+					'sails-linker:prod-bower-CSS',
+					'sails-linker:prod-local-CSS'
 				],
 				options: {
 					spawn: false,
@@ -185,14 +189,14 @@ module.exports = function(grunt) {
 		uglify: {
 			prod: {
 				files: {
-					'client/prod/scripts/threePages.min.js': allDevJsFiles
+					'client/prod/scripts/smashingImmage.min.js': allDevJsFiles
 				}
 			}
 		},
 		cssmin: {
 			prod: {
 				files: {
-					'client/prod/styles/threePages.min.css': allDevCssFiles
+					'client/prod/styles/smashingImmage.min.css': allDevCssFiles
 				}
 			}
 		},
@@ -218,13 +222,13 @@ module.exports = function(grunt) {
 		express: {
 			dev: {
 				options: {
-					script: 'server/app.js',
+					script: 'server/bin/www.js',
 					output: 'this app is listening at port number 7000'
 				}
 			},
 			prod: {
 				options: {
-					script: 'server/app.js',
+					script: 'server/bin/www.js',
 					output: 'this app is listening at port number 6500',
 					// keeps this sub-task/server running; therefore, express.prod is the last task
 					// in the lineup for 'grunt prod'

@@ -1,0 +1,13 @@
+<section class='horizontal-center clearfix'>
+	<a ng-show='!albums.length' ui-sref='add' class='btn btn-info'>add a new album</a>
+	<div ng-repeat='album in albums' class='col-md-3 col-sm-4 col-xs-6 horizontal-center margin-bot-30'>
+		<div class='file-container'>
+			<a ng-click='start(album)'>
+				<img ng-src='/contents/{{album.content[0]}}' class='img-rounded' style='width: 200px; height: 200px'>
+			</a>
+		</div>
+		<div>
+			<h4>{{album.title}}</h4>
+		</div>
+	</div>
+</section>
