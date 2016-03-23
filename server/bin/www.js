@@ -4,7 +4,7 @@ if(process.env.NODE_ENV == 'dev'){
 
 var app = require('../app');
 
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 80;
 
 // if(process.env.NODE_ENV == 'dev'){
 	app.listen(port, function(){

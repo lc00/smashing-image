@@ -1,20 +1,20 @@
 
 [0m[0m
 [0m  Sending a POST to login[0m
-[0mPOST /api/v1/users/login [32m200 [0m109.000 ms - 159[0m
+[0mPOST /api/v1/users/login [32m200 [0m108.995 ms - 159[0m
 { username: 'u',
-  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiMjAxNi0wMy0yM1QxODo1MDoyOS4yNjRaIn0.vo0EYgkWlC22KzQl3d_swdazutXmNauQdDlPA3yJ8qs' }
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjoiMjAxNi0wMy0yM1QyMTo0Mjo0Ny4wMDhaIn0.9rUf9jvZRvZG0jHg2IjkFFp0qhKcUVbGzjbwOrrofOQ' }
 [2K[0G  [32m  ✓[0m[90m should succeed[0m[31m (141ms)[0m
 
 [0m  Sending a POST to logout[0m
-[0mPOST /api/v1/users/logout [32m200 [0m5.969 ms - 2[0m
+[0mPOST /api/v1/users/logout [32m200 [0m5.641 ms - 2[0m
 [2K[0G  [32m  ✓[0m[90m should succeed[0m
 
 [0m  Canary test[0m
 [2K[0G  [32m  ✓[0m[90m should pass[0m
 
 [0m  Sending a GET to /api/v1/health[0m
-[0mGET /api/v1/health [32m200 [0m0.681 ms - 23[0m
+[0mGET /api/v1/health [32m200 [0m0.663 ms - 23[0m
 [2K[0G  [32m  ✓[0m[90m should get a heartbeat[0m
 
 
