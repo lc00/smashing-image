@@ -18,10 +18,10 @@ describe('smashingImmage', function () {
         }));
         
         it('start function has been called', function(){
-			    spyOn(scope, 'start');
+			spyOn(scope, 'start');
         	scope.start();
         	expect(scope.start).toHaveBeenCalled();
-        });
-
+        }); 
+  
     });
 })
