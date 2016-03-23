@@ -4,7 +4,7 @@ var bowerJsFiles = [
 	'bower_components/ng-file-upload/ng-file-upload-shim.js', 'bower_components/ng-file-upload/ng-file-upload.js'
 	];
 var bowerCssFiles = [
-	'bower_components/bootstrap/dist/css/bootstrap.css'
+	'bower_components/bootstrap/dist/css/bootstrap.css', 'bower_components/animate.css/animate.css'
 ];
 
 var allDevJsFiles = [
@@ -13,7 +13,7 @@ var allDevJsFiles = [
 	'bower_components/ng-file-upload/ng-file-upload-shim.js', 'bower_components/ng-file-upload/ng-file-upload.js'
 ];
 var allDevCssFiles = [
-	'bower_components/bootstrap/dist/css/bootstrap.css', 'client/dev/styles/*.css'
+	'bower_components/bootstrap/dist/css/bootstrap.css', 'bower_components/animate.css/animate.css', 'client/dev/styles/*.css'
 ];
 
 
@@ -274,7 +274,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['mochaTest', 'karma']);
 	// grunt.registerTask('karma', ['karma']);
-	grunt.registerTask('dev', ['env:dev','sails-linker:dev-bower-JS', 'sails-linker:dev-local-JS', 'sails-linker:dev-bower-CSS','sails-linker:dev-local-CSS', 'express:dev',
- 'watch']);
-	grunt.registerTask('prod', ['env:prod', 'uglify', 'cssmin', 'copy', 'sails-linker:prod-local-JS', 'sails-linker:prod-local-CSS', 'sails-linker:prod-bower-JS', 'sails-linker:prod-bower-CSS', 'mochaTest', 'karma']);
+	grunt.registerTask('dev', ['env:dev','sails-linker:dev-bower-JS', 'sails-linker:dev-local-JS', 'sails-linker:dev-bower-CSS','sails-linker:dev-local-CSS', 'express:dev', 'watch']);
+	grunt.registerTask('prod', ['env:prod', 'uglify', 'cssmin', 'copy', 'sails-linker:prod-local-JS', 'sails-linker:prod-local-CSS', 'sails-linker:prod-bower-JS', 'sails-linker:prod-bower-CSS', 'mochaTest', 'karma', 'express:prod']);
 };
