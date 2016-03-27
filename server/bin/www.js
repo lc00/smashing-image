@@ -3,7 +3,8 @@ if(process.env.NODE_ENV == 'dev'){
 }
 
 var app = require('../app');
-
+// 80 is for production
+// 3001 is for dev
 var port = process.env.PORT || 80;
 
 // if(process.env.NODE_ENV == 'dev'){
