@@ -32,12 +32,13 @@ router.post('/add', upload.any(), passport.authenticate('bearer', {session: fals
 // get request from album
 router.get('/get', imageController.get);
 
-// update an image's info
+// update the title or description of an image
 router.put('/', passport.authenticate('bearer', {session: false}), imageController.put);
 
+// get all the images belong to the user
 router.get('/user', passport.authenticate('bearer', {session: false}), imageController.getImagesByUser);
 
-// get request for imageLink
+// for share link
 router.get('/:link', imageController.getByImageLink);
 
 module.exports = router;
