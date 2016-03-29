@@ -4,7 +4,7 @@
 		.module('smashingImmage')
 		.directive('imgInfo', imgInfo);	
 
-	function imgInfo(){
+	function imgInfo(dataservice){
 		return {
 			templateUrl: '../views/imgInfo.html',
 			restrict: 'EA',
@@ -21,29 +21,45 @@
 					});
 			},
 			link: function(scope, el, attrs){
-el.addClass('edit-in-place');
+				var divs = el.find('div');
+
         var inputEl = el.find('input');
         
         scope.editable = function(item){
-            console.log(item)
-            el.addClass('active');
+       	  	
+          if(item == 'title') {
+						divs[0].className += ' active'; 
             inputEl[0].focus();
+          }
+
+					else 	{
+						divs[1].className += ' active'; 
+            inputEl[1].focus();
+          }
         };
 
         inputEl.on('blur', function(){
-            el.removeClass('active');
-            // saveUser(scope.user).then(function(result){
-            //     scope.user = result;
-            // });
+        	divs[0].className = 'edit-in-place';
+        	divs[1].className = 'edit-in-place';
+
+        	scope.imageInfo = {
+        		path: scope.image,
+        		title: scope.title,
+        		description: scope.description
+        	};
+
+        	dataservice.updateImageInfo(scope.imageInfo)
+
         });
 
         inputEl.on('keypress', function(e){
             var keyCode = e.keyCode || e.which;
             if (keyCode == '13'){
-                el.removeClass('active');
-                // saveUser(scope.user).then(function(result){
-                //     scope.user = result;
-                // });
+              divs[0].className = 'edit-in-place'
+        			divs[1].className = 'edit-in-place'
+
+	        		dataservice.updateImageInfo(scope.imageInfo)
+
             }
         });
 
