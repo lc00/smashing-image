@@ -99,10 +99,12 @@
 		}
 
 		function updateImageInfo(params) {
+			var token = auth.getToken();
+
 			return $http
-								.put('/api/v1/images', params)
+								.put('/api/v1/images?access_token=' + token, params)
 								.then(function successCallback(response){ 
-									console.log(response)
+									// console.log(response)
 									return response; 
 								}, function errorCallback(response){
 									console.log(response)

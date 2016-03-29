@@ -33,7 +33,7 @@ router.post('/add', upload.any(), passport.authenticate('bearer', {session: fals
 router.get('/get', imageController.get);
 
 // update an image's info
-router.put('/', imageController.put);
+router.put('/', passport.authenticate('bearer', {session: false}), imageController.put);
 
 router.get('/user', passport.authenticate('bearer', {session: false}), imageController.getImagesByUser);
 
