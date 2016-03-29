@@ -77,6 +77,14 @@ ImageController.prototype.get = function(req, res, next){
 	});
 };
 
+ImageController.prototype.put = function(req, res, next){
+	
+	Image.findOneAndUpdate({fileName: req.body.path}, {title: req.body.title, description: req.body.description}, function(err, images){		
+		if(err) res.status(500).json(err);
+		res.status(200).json(images);
+	});
+};
+
 ImageController.prototype.getByImageLink = function(req, res, next){
 	Image.findOne({link: req.params.link}, function(err, image){
 		if(err) res.status(500).json(err);

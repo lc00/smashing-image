@@ -12,7 +12,8 @@
 			getAlbumsByUser: getAlbumsByUser,
 			getContent: getContent,
 			getImage: getImage,
-			getAlbum: getAlbum
+			getAlbum: getAlbum,
+			updateImageInfo: updateImageInfo
 		};
 
 		return service;
@@ -96,6 +97,20 @@
 								return response;
 	            });
 		}
+
+		function updateImageInfo(params) {
+			return $http
+								.put('/api/v1/images', params)
+								.then(function successCallback(response){ 
+									console.log(response)
+									return response; 
+								}, function errorCallback(response){
+									console.log(response)
+									return response; 
+								});
+	      
+		}
+		
 
 
 	}

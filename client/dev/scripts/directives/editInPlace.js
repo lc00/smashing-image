@@ -5,17 +5,18 @@
 
     function editInPlace () {
         return {
-            element: 'EA',
-            // scope: {
-            //     info: '@info'
-            // },
+            element: 'A',
+            scope: {
+                info: '='
+            },
             link: function(scope, el, attrs){
-console.log(scope)
+// console.log(scope)
                 el.addClass('edit-in-place');
                 var inputEl = el.find('input');
+                // console.log(inputEl)
                 
                 scope.editable = function(){
-                    console.log('clicked')
+                    console.log(scope)
                     el.addClass('active');
                     inputEl[0].focus();
                 };
