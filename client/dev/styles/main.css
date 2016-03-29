@@ -189,29 +189,45 @@ ul {
   z-index: 1000;
 }
 
-.edit-in-place h4 {
+/* edit-in-place */
+.normal h4 {
+  cursor: auto;
+}
+
+.normal p {
+  cursor: auto;
+}
+
+.normal input {
+  display: none;
+}
+
+.normal.edit-in-place h4 {
   cursor: pointer;
 }
 
-.edit-in-place p {
+.normal.edit-in-place p {
   cursor: pointer;
 }
 
-.edit-in-place input {
+.normal.edit-in-place input {
   display: none;
 }
 
-.edit-in-place.active h4 {
+.normal.edit-in-place.active h4 {
   display: none;
 }
 
-.edit-in-place.active p {
+.normal.edit-in-place.active p {
   display: none;
 }
 
-.edit-in-place.active input {
+.normal.edit-in-place.active input {
   display: inline-block;
 }
+/* end of edit-in-place */
+
+
 
 .content .title {
   display: none;
