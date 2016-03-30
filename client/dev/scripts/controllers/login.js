@@ -16,7 +16,9 @@
 						password: user.password
 				})
 				.then(function successCallback(response){
-					auth.setUser(response.data);					
+					auth.setUser(response.data);	
+					// var l = localStorage.getItem('currentUser')				
+					// console.log(l)
 					$state.go('images');
 				},
 				function errorCallback(response){

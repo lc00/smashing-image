@@ -6,7 +6,6 @@
 		.factory('dataservice', dataservice);
 
 	function dataservice($http, auth, $q){
-		var token = auth.getToken();
 
 		var service = {
 			getImagesByUser: getImagesByUser,
@@ -33,7 +32,7 @@
 		}
 
 		function getImagesByUser(){
-			// var token = auth.getToken();
+			var token = auth.getToken();
 			return	$http
 									.get('/api/v1/images/user/?access_token=' + token)
 								 	.then(function successCallback(response){ 
@@ -44,7 +43,7 @@
 		}
 
 		function getAlbumsByUser(){
-			// var token = auth.getToken();
+			var token = auth.getToken();
 
 			return $http
 							.get('/api/v1/albums/user?access_token=' + token)
@@ -100,7 +99,7 @@
 		}
 
 		function updateImageInfo(params) {
-			// var token = auth.getToken();
+			var token = auth.getToken();
 
 			return $http
 								.put('/api/v1/images?access_token=' + token, params)

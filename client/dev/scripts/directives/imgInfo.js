@@ -30,11 +30,12 @@
 
 					var divs = el.find('div');
 
+					divs[0].className += ' edit-in-place';
+					divs[1].className += ' edit-in-place';
+					
 	        var inputEl = el.find('input');
 	        
 	        scope.editable = function(item){
-						divs[0].className += ' edit-in-place';
-						divs[1].className += ' edit-in-place';
 	       	  	
 	          if(item == 'title') {
 							divs[0].className += ' active'; 
