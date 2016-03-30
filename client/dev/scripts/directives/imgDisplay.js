@@ -4,6 +4,7 @@
     .directive('imgDisplay', function () {
         return {
             restrict: 'EA',
+            // replace: true,
             // template: '../views/imgDisplay.html',
             template: "<img ng-src='/contents/{{image.fileName}}' class='img-rounded' style='width: 200px; height: 200px'>",
             controller: function ($scope, $state, $log) {

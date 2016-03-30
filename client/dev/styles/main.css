@@ -37,6 +37,10 @@
 	margin-bottom: 30px;
 }
 
+.margin-top-bot-10p5 {
+  margin: 10.5px 0 10.5px 0;
+}
+
 .horizontal-center {
 	text-align: center;
 }
