@@ -7,7 +7,7 @@
 
     function Images ($scope, result, alert) {
       $scope.myInterval = 5000;
-
+// console.log(result)
 			if(result.status != 200){
         console.log(result)
 				alert('warning', 'Opps', 'Could not get images');
