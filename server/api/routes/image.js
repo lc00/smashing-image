@@ -10,9 +10,11 @@ var imageController = new ImageController();
 var albumController = new AlbumController();
 var router = express.Router();
 
+// business logic for adding a new image or images
 // multer saves the files to where dest is pointing to, in this case uploads folder
-router.post('/add', upload.any(), passport.authenticate('bearer', {session: false}), function(req, res, next){
+router.post('/', upload.any(), passport.authenticate('bearer', {session: false}), function(req, res, next){
 	imageController.saveImages(req)
+		// resolving the promise
 		.then(function(result){
 			if(result[0].albumName ) {
 				return albumController.add(result, res);
@@ -21,15 +23,15 @@ router.post('/add', upload.any(), passport.authenticate('bearer', {session: fals
 			return res.status(201).json(result);
 
 		})
+		// catching the rejection of the promise
 		.catch(function(error){
-			console.log('error')
 			console.log(error)
 			return res.status(500).json(error);
 		})
 });
 
 
-// get request from album
+// get request from album to get image
 router.get('/get', imageController.get);
 
 // update the title or description of an image

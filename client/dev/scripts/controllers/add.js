@@ -28,7 +28,7 @@ $scope.progress = null;
 
             if ($scope.files && $scope.files.length) {
                 Upload.upload({
-                    url: '/api/v1/images/add',
+                    url: '/api/v1/images',
                     data: {
                         files: $scope.files, 
                         albumName: $scope.albumName,                      

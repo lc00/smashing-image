@@ -9,6 +9,7 @@ var chance = new Chance();
 
 var ImageController = function(){};
 
+// logic that deals with the database
 ImageController.prototype.saveImages = function(req){
 	var promiseArr = [];
 	var fileArr = req.files;
@@ -72,6 +73,7 @@ ImageController.prototype.getImagesByUser = function(req, res, next){
 // album request
 ImageController.prototype.get = function(req, res, next){
 	Image.find({fileName: req.query.imageFileName}, function(err, images){
+		console.log(images)
 		if(err) res.status(500).json(err);
 		res.status(200).json(images);
 	});
