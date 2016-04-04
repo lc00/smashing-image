@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha ./server/tests --reporter dot",
     "start": "export PORT=80 && node server/bin/www.js",
-    "dev": "export NODE_ENV=dev && nodemon server/bin/www.js",
+    "dev": "nodemon server/bin/www.js",
     "postinstall": "bower install"
   },
   "repository": {
