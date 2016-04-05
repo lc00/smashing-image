@@ -1,6 +1,4 @@
-if(process.env.NODE_ENV == 'dev'){
-	require('dotenv').load();
-}
+require('dotenv').load();
 
 var app = require('../app');
 // 80 is for production
